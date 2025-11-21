@@ -1,0 +1,194 @@
+/* Variables de colores */
+:root {
+  --primary-color: #6d28d9;
+  --secondary-color: #7c5cff;
+  --bg-color: #f5f6fa;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --accent-color: #ff6b6b;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 20px 40px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.header .usuario {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Dashboard container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  gap: 25px;
+}
+
+/* Tarjetas resumen */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.summary-card h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.summary-card p {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Paneles */
+.card.panel {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card.panel h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Formularios y filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(124,92,255,0.2);
+}
+
+/* Botones */
+button, .btn-gradient {
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+button:hover, .btn-gradient:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Tabla */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f1f5f9;
+}
+
+/* Presets */
+.presets button {
+  margin-top: 8px;
+  background: #e0e7ff;
+  color: var(--primary-color);
+}
+
+/* Responsive */
+@media(max-width:1024px) {
+  .filtros {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    min-width: 100%;
+  }
+}

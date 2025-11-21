@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login - Sistema de Ingresos</title>
+<link rel="stylesheet" href="/public/src/css/form.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="usuarioInput">Usuario:</label>
+        <input id="usuarioInput" type="text" placeholder="Usuario" required>
+      </div>
+      <div class="form-group">
+        <label for="passwordInput">Contraseña:</label>
+        <input id="passwordInput" type="password" placeholder="Contraseña" required>
+      </div>
+      <button id="btnLogin">Ingresar</button>
+      <p id="mensajeError" style="color:red; margin-top:10px;"></p>
+    </section>
+  </main>
+
+  <!-- Primero la librería de Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.33.0/dist/umd/supabase.min.js"></script>
+  <!-- Luego tu JS -->
+  <script src="/public/src/js/login.js"></script>
+</body>
+</html>

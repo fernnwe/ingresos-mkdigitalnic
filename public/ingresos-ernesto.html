@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ingresos - Ernesto</title>
+<link rel="stylesheet" href="/public/src/css/form.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.33.0/dist/umd/supabase.min.js"></script>
+<script defer src="/public/src/js/services.js"></script>
+<script defer src="/public/src/js/ingresos-ernesto.js"></script>
+</head>
+<body>
+<header class="header">
+  <h1>Mis Ingresos</h1>
+  <span class="usuario">Ernesto</span>
+</header>
+
+<main class="dashboard-container">
+
+  <!-- Tarjeta resumen -->
+  <div class="dashboard-cards">
+    <div class="card summary-card">
+      <h3>Total Ingresos</h3>
+      <p id="totalIngresosDashboard">C$0</p>
+    </div>
+    <div class="card summary-card">
+      <h3>Ingresos del Mes</h3>
+      <p id="ingresosMes">C$0</p>
+    </div>
+  </div>
+
+  <!-- Filtros -->
+  <section class="card panel">
+    <h2>Filtrar Mis Ingresos</h2>
+    <div class="filtros">
+      <div class="form-group">
+        <label>Desde</label>
+        <input type="date" id="desdeFiltro">
+      </div>
+      <div class="form-group">
+        <label>Hasta</label>
+        <input type="date" id="hastaFiltro">
+      </div>
+      <button id="btnFiltrar" class="btn-gradient">Filtrar</button>
+      <div class="presets">
+        <button data-range="7">Semanal</button>
+        <button data-range="15">Quincenal</button>
+        <button data-range="30">Mensual</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla de ingresos -->
+  <section class="card panel">
+    <h2>Mis Ingresos Detallados</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Servicio</th>
+            <th>Precio</th>
+            <th>Cuenta</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaIngresos"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Total:</strong></td>
+            <td colspan="3" id="totalIngresos">C$0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
